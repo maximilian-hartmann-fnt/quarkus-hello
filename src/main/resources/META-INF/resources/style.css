@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: aliceblue;
 }
 code {
     font-family: "Courier New", monospace;
@@ -25,7 +26,7 @@ p {
 }
 a {
     text-decoration: underline;
-    color: #1259A5;
+    color: rgb(0, 216, 0);
 }
 a:hover, a:active { color: #c00; }
 .grid {
@@ -43,7 +44,7 @@ a:hover, a:active { color: #c00; }
 }
 .content-wrapper {
     padding: 0 13rem;
-    background: white;
+    background: aliceblue;
 }
 .header {
     background-position: 0 1rem;
