@@ -10,3 +10,10 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+  
+  automated-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v3
+     - name: Create Pull Request
+     - uses: peter-evans/create-pull-request@v4
