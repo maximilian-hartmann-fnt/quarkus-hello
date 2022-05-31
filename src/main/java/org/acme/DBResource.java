@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 import javax.inject.Inject;
 
-@Path("/racebase")
+@Path("/database")
 public class DBResource {
 
     @Inject
@@ -20,7 +20,7 @@ public class DBResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        setTables(defaultDataSource);
+        //setTables(defaultDataSource);
         return getUserWithID(1, defaultDataSource);
     }
 
@@ -28,17 +28,19 @@ public class DBResource {
         Connection conn = null;
 		Statement stmt = null;
 		ResultSet rslt = null;
-
+		
 		try
 		{
 			conn = defaultDataSource.getConnection();
 			stmt = conn.createStatement();
 
-			String table_people = "CREATE TABLE IF NOT EXISTS people(ID INT PRIMARY KEY, LAST_NAME VARCHAR(50), FIRST_NAME VARCHAR(50), AGE INT, GENDER CHAR(1), EMAIL VARCHAR(155));";
-			
+			String table_people = "CREATE TABLE IF NOT EXISTS people (ID INT PRIMARY KEY, LAST_NAME VARCHAR(50), FIRST_NAME VARCHAR(50), AGE INT, GENDER CHAR(1), EMAIL VARCHAR(155));";
+			//String insert = "INSERT INTO people VALUES (1, 'Hartmann', 'Maximilian', 19, 'm', 'maximilian.hartmann@fntsoftware.com');";
             stmt.executeUpdate(table_people);
-            
-            
+			//stmt.executeUpdate(insert);
+			System.out.println(defaultDataSource);
+            System.out.println(conn);
+            System.out.println(getUserWithID(1, defaultDataSource));
 		}
 		catch (SQLException e)
 		{
@@ -90,6 +92,7 @@ public class DBResource {
             Connection conn = defaultDataSource.getConnection();
 			stmt = conn.createStatement();
 			rslt = stmt.executeQuery(check);
+			
 			while(rslt.next()) {
 				name = rslt.getString("first_name");
 				
