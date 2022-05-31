@@ -1,6 +1,0 @@
-2022-05-31 06:52:53 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PEOPLE" not found (this database is empty); SQL statement:
-SELECT first_name FROM people WHERE id = 1 [42104-210]
-2022-05-31 06:54:16 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FRUIT" not found (this database is empty); SQL statement:
-SELECT name FROM fruit WHERE id = 1 [42104-210]

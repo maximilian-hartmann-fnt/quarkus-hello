@@ -1,5 +1,0 @@
-2022-05-31 06:33:25 jdbc[4]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ETAPPEN" not found; SQL statement:
-SELECT name FROM etappen WHERE etappen_id = 1 [42102-210]
-2022-05-31 06:45:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-210]
