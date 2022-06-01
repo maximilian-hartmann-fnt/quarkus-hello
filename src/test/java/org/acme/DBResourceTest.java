@@ -9,13 +9,13 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class DBResourceTest {
 
-    @Test
-    public void testHelloEndpoint() {
+/*    @Test
+    public void testDataBaseEndpoint() {
         given()
           .when().get("/database")
           .then()
              .statusCode(200)
              .body(is("Maximilian"));
     }
-
+*/
 }
