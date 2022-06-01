@@ -9,7 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class DBResourceTest {
 
-/*    @Test
+    @Test
     public void testDataBaseEndpoint() {
         given()
           .when().get("/database")
@@ -17,5 +17,5 @@ public class DBResourceTest {
              .statusCode(200)
              .body(is("Maximilian"));
     }
-*/
+
 }
