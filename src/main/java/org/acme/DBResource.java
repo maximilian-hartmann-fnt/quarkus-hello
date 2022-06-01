@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 import javax.inject.Inject;
 
+
 @Path("/database")
 public class DBResource {
 
@@ -21,7 +22,13 @@ public class DBResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         
-        return getUserWithID(1, defaultDataSource);
+		String message = getUserWithID(1, defaultDataSource);
+
+		if(message==null){
+			return "Es konnte keine Verbindung zur Datenbank hergestellt werden. Bitte stellen Sie sicher, dass der Server gestartet ist.";
+		}else{
+			return getUserWithID(1, defaultDataSource);
+		}
     }
 
     
