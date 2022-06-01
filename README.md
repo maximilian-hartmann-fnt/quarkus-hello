@@ -4,12 +4,6 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
-## Starting the database Server
-To start the h2 Server tool from Terminal with the default settings, run:
-```bash script
-java -cp h2*.jar org.h2.tools.Server
-```
-This will automatically start the H2 Console and you can also now access the database with your application.
 
 ## Running the application in dev mode
 

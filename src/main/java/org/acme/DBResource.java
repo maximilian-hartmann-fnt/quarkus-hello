@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.sql.DataSource;
 import javax.inject.Inject;
-
+import org.h2.tools.Server;
 
 @Path("/database")
 public class DBResource {
@@ -21,9 +21,17 @@ public class DBResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        
+        try{
+			Server server = Server.createTcpServer().start();
+			Server webServerConsole = Server.createWebServer().start();
+			System.out.println("Database URL: " + server.getURL() + "	Port: " + server.getPort());
+			System.out.println("Console URL: " + webServerConsole.getURL() + "	Port: " + webServerConsole.getPort());
+			
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
 		String message = getUserWithID(1, defaultDataSource);
-
+		
 		if(message==null){
 			return "Es konnte keine Verbindung zur Datenbank hergestellt werden. Bitte stellen Sie sicher, dass der Server gestartet ist.";
 		}else{
