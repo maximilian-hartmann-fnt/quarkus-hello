@@ -21,7 +21,7 @@ public class StaticContentTest {
     public void testIndexHtml() throws IOException {
         try (InputStream in = url.openStream()) {
             String contents = new String(in.readAllBytes(), StandardCharsets.UTF_8);
-            Assertions.assertTrue(contents.contains("<title>Testing Guide</title>"));
+            Assertions.assertTrue(contents.contains("<title>Hello World</title>"));
         }
     }
 }
